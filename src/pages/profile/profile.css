@@ -1,0 +1,141 @@
+.profileContainer {
+    overflow-y: scroll;
+    flex: 1;
+}
+
+.profileHeader {
+padding: 50px 50px 0 50px;
+display: flex;
+justify-content: space-between;
+}
+
+.profileBackBtn button {
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 8px 24px;
+}
+
+.profileStatusOptions .profileHeaderBtn {
+    text-transform: uppercase;
+    margin-right: 20px;
+    font-size: 12px;
+    padding: 8px 24px;
+}
+
+.candidateInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+    padding:0 50px 0 50px;
+}
+
+.candidateName {
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: capitalize;
+    line-height: 49.72px;
+    color: #071852;
+}
+
+.internshipMode {
+    font-weight: 100 !important;
+    font-size: 14px;
+}
+
+.physical {
+    font-weight: bold;
+}
+
+.candidatePersonalData {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: right;
+    color: #071852;
+    text-transform: capitalize;
+}
+
+.candidateOptions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 50px 0 50px;
+}
+
+.candidateOptions button {
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #FFFFFF;
+}
+
+.candidateOptions button:last-child {
+    margin: 0;
+}
+
+/* .profileOptionBtn {
+    word-wrap: break-word !important;
+    padding: 10px 15px !important;
+} */
+
+.candidateWorkExperience {
+    display: flex;
+    margin-top: 40px;
+    background-color: #FBF8F8;
+    /* justify-content: space-around; */
+    font-size: 16px;
+    color: #071852;
+    text-transform: capitalize;
+    padding: 20px 50px 20px 50px;
+}
+
+.workHistory, .questionDiv {
+    margin-right: 95px;
+}
+
+.historyInput {
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.inputWeight {
+    font-size: 16px;
+    font-weight: bold !important;
+}
+
+.graduateStatus {
+    padding-bottom: 10px;
+}
+
+.personalSummary {
+    padding: 50px;
+    display: flex;
+}
+
+.response {
+    background-color: #FDF8F8;
+    font-size: 12px;
+    color: #353536;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.interviewQuestion, .linkedDiv {
+    color: #071852;
+    font-weight: 700;
+}
+
+.summaryDiv, .linksDiv {
+    width: 410px;
+    margin-bottom: 20px;
+}
+
+.workLink, .availabilityQuestion {
+    padding-bottom: 10px;
+}
+
+.instaTwitter {
+    display: flex;
+    justify-content: space-between;
+}

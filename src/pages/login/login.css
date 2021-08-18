@@ -1,0 +1,27 @@
+.loginFormHeader h1 {
+  font-size: 38px;
+}
+
+.usernameDiv,
+.passwordDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm {
+  background-color: aliceblue;
+  width: 550px;
+  /* height: 391px; */
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.usernameInput,
+.passwordInput {
+  background-color: #f3f3f3;
+}
+
+.usernameLabel,
+.passwordLabel {
+  font-size: 16px;
+}

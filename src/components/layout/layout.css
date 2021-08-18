@@ -1,12 +1,4 @@
-.layout-wrapper {
-    width: 100%;
-}
-.layout-sidemenu {
-    width: 25%;
-    height: 100vh ;
-}
-.layout-children {
-    width: 75%;
+.layoutWrapper {
+    display: flex;
     height: 100vh;
-    background-color: white;
 }

@@ -1,7 +1,74 @@
-.sidemenu-wrapper {
+dl, ol, ul {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0 !important;
+}
+
+.sidemenuWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
     background-color:#071852;
     height: 100%;
+    padding-top: 150px;
+    position: relative;
+    overflow-y: hidden;
 }
-.sidemenu-ul {
+.sidemenuList {
     list-style: none;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.sidemenuList li {
+    text-transform: uppercase;
+    padding: 15px 50px;
+    font-size: 14px;
+    font-weight: 500;
+    border-left: 6px solid transparent;
+}
+
+.closedState {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding: 15px 30px !important;
+    border-left: 6px solid transparent;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
+
+.sidemenuList li:hover, .activeClass {
+    background-color: #FFFFFF;
+    color: #071852;
+    border-left: 6px solid #4066EB;
+    cursor: pointer;
+}
+
+.arrowSpan {    
+    display: flex;
+    justify-content: center;
+}
+
+.sidemenuBackArrow {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 2px solid #ffffff;
+    font-size: 20px;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+}
+
+.sidemenuBackArrow:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none !important;
 }
