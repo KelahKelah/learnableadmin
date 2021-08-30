@@ -17,17 +17,17 @@ const initialValues = {
 };
 
 export const Login = () => {
-  const handleFormSubmit = (values) => {
+  const handleFormSubmit = async (values) => {
     console.log("i run here", values);
-    const response = RequestProcessor({
+    const response = await RequestProcessor({
       method: "POST",
       url: "/admin/login",
       payload: values,
     });
 
     // const response = axios.post("/admin", values);
-    // console.log(response, "yuy")
-    if (response.success) {
+    console.log(response.result.status, "yuy")
+    if (response.result.status) {
       console.log("success");
     } else {
       console.log("error");
