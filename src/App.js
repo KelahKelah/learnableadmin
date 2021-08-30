@@ -1,11 +1,16 @@
-import './App.css';
-import Approute  from './approuter';
+import "./App.css";
+import Approute from "./approuter";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="App">
-      <Approute />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <Approute />
+      </div>
+    </QueryClientProvider>
   );
 }
 

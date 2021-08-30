@@ -5,6 +5,7 @@ import { Profile } from "./pages/profile/profile";
 import { SelectedApplicants } from "./pages/selectedApplicants/selectedApplicants";
 import { Dashboard } from "./pages/dashboard/dashboard";
 import { RejectedApplicants } from "./pages/rejectedApplicants/rejectedApplicants";
+// import { Login } from "./pages";
 
 const LayoutRoute = ({ Component, ...rest }) => {
   return (
@@ -23,6 +24,7 @@ const Approute = () => {
   return (
     <Router>
       <Switch>
+        {/* <Route path={"/"} exact={true} component={Login} /> */}
         <LayoutRoute path={"/dashboard"} exact={true} Component={Dashboard} />
         <LayoutRoute path={"/dashboard/profile"} exact={true} Component={Profile} />
         <LayoutRoute path={"/dashboard/selectedApplicants"} exact={true} Component={SelectedApplicants} />

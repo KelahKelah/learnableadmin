@@ -1,5 +1,18 @@
+.loginContainer {
+  height: 100vh;
+}
+
 .loginFormHeader h1 {
   font-size: 38px;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 80px;
+  margin-bottom: 80px;
+}
+
+.formYear {
+  color: yellow;
 }
 
 .usernameDiv,
@@ -9,11 +22,10 @@
 }
 
 .loginForm {
-  background-color: aliceblue;
+  background-color: #FFFFFF;
   width: 550px;
-  /* height: 391px; */
   border-radius: 5px;
-  padding: 20px;
+  padding: 30px;
 }
 
 .usernameInput,
@@ -24,4 +36,14 @@
 .usernameLabel,
 .passwordLabel {
   font-size: 16px;
+  font-weight: 300;
+}
+
+.btnDiv {
+  margin: 40px auto;
+}
+
+.loginBtn {
+  width: 100%;
+  background-color: #4066EB !important;
 }

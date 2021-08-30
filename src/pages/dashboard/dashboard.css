@@ -4,6 +4,7 @@
     flex: 1;
     padding: 50px;
     overflow-y: scroll;
+    background-color: #E5E5E5;
 }
 
 .cardReelsContainer {
