@@ -1,6 +1,7 @@
 .profileContainer {
     overflow-y: scroll;
     flex: 1;
+    background-color: #E5E5E5;
 }
 
 .profileHeader {

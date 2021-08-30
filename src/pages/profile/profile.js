@@ -1,7 +1,11 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import "./profile.css";
 
 export const Profile = () => {
+  const hist = useLocation();
+  console.log(hist, "checkHistory");
+
   return (
     <div className="profileContainer">
       <div className="profileHeader">
@@ -94,7 +98,8 @@ export const Profile = () => {
             year of POP? <span className="inputWeight">2020</span>
           </div>
           <div className="historyInput">
-            where are you serving (if currently)? <span className="inputWeight">tenece</span>
+            where are you serving (if currently)?{" "}
+            <span className="inputWeight">tenece</span>
           </div>
         </div>
       </div>
@@ -142,10 +147,12 @@ export const Profile = () => {
           </div>
           <div className="linksDiv">
             <div className="workLink">
-              LinkedIn: <span className="linkedDiv">www.linkedin.com/richmondO</span>
+              LinkedIn:{" "}
+              <span className="linkedDiv">www.linkedin.com/richmondO</span>
             </div>
             <div className="workLink">
-              Facebook: <span className="linkedDiv">www.facebook.com/richmondO</span>
+              Facebook:{" "}
+              <span className="linkedDiv">www.facebook.com/richmondO</span>
             </div>
             <div className="instaTwitter">
               <div className="workLink">
@@ -161,10 +168,12 @@ export const Profile = () => {
                 <span className="linkedDiv">Yes</span>
               </div>
               <div className="availabilityQuestion">
-                Do you have adequate accomodation in Enugu? <span className="linkedDiv">Yes</span>
+                Do you have adequate accomodation in Enugu?{" "}
+                <span className="linkedDiv">Yes</span>
               </div>
               <div className="availabilityQuestion">
-                How did you hear about the internship? <span className="linkedDiv">Twitter</span>
+                How did you hear about the internship?{" "}
+                <span className="linkedDiv">Twitter</span>
               </div>
             </div>
           </div>

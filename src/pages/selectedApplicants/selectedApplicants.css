@@ -2,6 +2,7 @@
     padding: 50px;
     flex: 1;
     overflow-y: scroll;
+    background-color: #E5E5E5;
 }
 
 .cardContainer {
