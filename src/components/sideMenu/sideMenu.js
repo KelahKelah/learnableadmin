@@ -14,6 +14,12 @@ const SideMenu = () => {
     },
     {
       id: 3,
+      text: "view pending applicants",
+      collapsed: "P",
+      link: "/dashboard/pendingApplicants",
+    },
+    {
+      id: 4,
       text: "view rejected applicants",
       collapsed: "R",
       link: "/dashboard/rejectedApplicants",
@@ -27,15 +33,10 @@ const SideMenu = () => {
       <ul className="sidemenuList">
         {sidebarList.map((item, id) => {
           return (
-            <NavLink
-              to={item.link}
-              activeClassName="selected"
-              key={id}
-            >
-              <li
-              className={
-                sidebarState ? "sidemenuList li" : "closedState"
-              }>{sidebarState ? item.text : item.collapsed}</li>{" "}
+            <NavLink to={item.link} activeClassName="selected" key={id}>
+              <li className={sidebarState ? "sidemenuList li" : "closedState"}>
+                {sidebarState ? item.text : item.collapsed}
+              </li>{" "}
             </NavLink>
           );
         })}

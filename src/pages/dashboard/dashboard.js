@@ -1,9 +1,22 @@
 import React from "react";
 import "../dashboard/dashboard.css";
 import Input from "../../components/input/input";
-import { Table } from "../../components/table/table";
+import { DashboardTable } from "../../components/dashboardTable/dashboardTable";
+// import { useQuery } from "react-query";
+// import RequestProcessor from "../../api/requestProcessor";
+
+// const fetchApplicants = () => {
+//   const res = RequestProcessor ({
+//     method: "GET",
+//     url: "/get/allApplicants"
+//   })
+//   return res
+// }
 
 const Dashboard = () => {
+  // const { data } = useQuery("applicantNumber", fetchApplicants)
+  // console.log(data)
+  
   const cardsGroup = [
     { id: 1, text: "Total number of applicants", count: "20" },
     { id: 2, text: "Total number for phone interviews", count: "5" },
@@ -31,7 +44,7 @@ const Dashboard = () => {
         })}
       </div>
       <div className="informationDiv">
-        <Table />
+        <DashboardTable />
       </div>
     </div>
   );
