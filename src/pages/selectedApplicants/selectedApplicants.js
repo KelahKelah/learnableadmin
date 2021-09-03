@@ -2,6 +2,7 @@ import React from "react";
 import "../selectedApplicants/selectedApplicants.css";
 import Input from "../../components/input/input";
 import { Table } from "../../components/table/table";
+// import { SelectedApplicantsTable } from "../../components/selectedApplicantsTable/selectedApplicantsTable";
 
 export const SelectedApplicants = () => {
   return (
