@@ -1,6 +1,13 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 export const Table = ({data}) => {  
+  const history = useHistory()
+
+  const viewProfile = (profile) => {
+    history.push( `/dashboard/profile/${profile._id}`, profile)
+  }
+
   return (
     <div>
       <div className="dashboardTable">
@@ -21,7 +28,7 @@ export const Table = ({data}) => {
                     <div className="bodyTag nameTag">{items.fullName}</div>
                     <div className="bodyTag">{items.email}</div>
                     <div className="bodyTag">{items.phoneNumber}</div>
-                    { items._id ? <div className="bodyTag statusTag"> View Profile </div> : "" }
+                    { items._id ? <div className="bodyTag statusTag" onClick={()=> viewProfile(items)}> View Profile </div> : "" }
                   </div>
                 );
               })}

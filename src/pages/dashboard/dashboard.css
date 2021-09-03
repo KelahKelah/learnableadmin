@@ -11,7 +11,7 @@
     display: -webkit-box;
     flex-direction: row;
     overflow-x: scroll;
-    padding: 20px 0 40px 0;
+    padding: 0 0 0 0;
     /* flex: 1; */
 }
 
@@ -44,8 +44,8 @@
     font-weight: 700;
 }
 
-.informationDiv {
-    margin-top: 40px;
+.marginDiv {
+    height: 40px !important;
 }
 
 .dashboardTable {
