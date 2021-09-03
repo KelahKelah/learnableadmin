@@ -1,6 +1,8 @@
 import "./App.css";
 import Approute from "./approuter";
 import { QueryClient, QueryClientProvider } from "react-query";
+import 'react-notifications/lib/notifications.css';
+import NotificationContainer from 'react-notifications';
 
 const queryClient = new QueryClient();
 
@@ -10,6 +12,7 @@ function App() {
       <div className="App">
         <Approute />
       </div>
+      <NotificationContainer />
     </QueryClientProvider>
   );
 }

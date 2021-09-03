@@ -5,6 +5,8 @@ import learnableImage from "../../components/images/learnableImage.svg";
 import RequestProcessor from "../../api/requestProcessor";
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import { useHistory } from "react-router-dom";
+import { NotificationManager } from "react-notifications";
 
 const validationSchema = Yup.object().shape({
   username: Yup.string().required("Required Field"),
@@ -17,6 +19,8 @@ const initialValues = {
 };
 
 export const Login = () => {
+  const history = useHistory()
+  NotificationManager.error("successful login")
   const handleFormSubmit = async (values) => {
     console.log("i run here", values);
     const response = await RequestProcessor({
@@ -24,13 +28,14 @@ export const Login = () => {
       url: "/admin/login",
       payload: values,
     });
-
-    // const response = axios.post("/admin", values);
-    console.log(response.result.status, "yuy")
+   
+    console.log(response.result.data.message, "yuy")
     if (response.result.status) {
-      console.log("success");
+      NotificationManager.success("successful login")
+      history.replace("/dashboard")
     } else {
       console.log("error");
+      NotificationManager.error(response.result.data.message)
     }
   };
 
