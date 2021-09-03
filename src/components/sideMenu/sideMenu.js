@@ -33,7 +33,7 @@ const SideMenu = () => {
       <ul className="sidemenuList">
         {sidebarList.map((item, id) => {
           return (
-            <NavLink to={item.link} activeClassName="selected" key={id}>
+            <NavLink to={item.link} activeClassName="selected" key={item.id}>
               <li className={sidebarState ? "sidemenuList li" : "closedState"}>
                 {sidebarState ? item.text : item.collapsed}
               </li>{" "}
