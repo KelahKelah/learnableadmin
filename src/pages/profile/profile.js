@@ -1,18 +1,42 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useQuery } from "react-query";
+import { useLocation, useHistory } from "react-router-dom";
+import RequestProcessor from "../../api/requestProcessor";
 import "./profile.css";
 
-export const Profile = () => {
-  const hist = useLocation();
-  console.log(hist, "checkHistory");
+// /admin/accept/{id}
 
+
+export const Profile = () => {
+  const { state } = useLocation();
+  const history = useHistory()
+  
+  const returnToDashboard = () => {
+    history.push("/dashboard")
+  }
+  
+  let applicantProfile = history.location.state._id;
+  // console.log(history.location.state._id, "profile")
+  
+  const handleAccept = () =>{
+    const res = RequestProcessor({
+      method: "GET",
+      url: `/admin/accept/${applicantProfile}`
+    })
+    return res;
+  }
+  
+  const { data } = useQuery("accept", handleAccept)
+  console.log(data, "profile")
+  
   return (
     <div className="profileContainer">
       <div className="profileHeader">
         <div className="profileBackBtn">
           <button
             type="button"
-            className="btn btn-outline-primary inputBtn profileHeaderBtn"
+            className="btn btn-outline-primary inputBtn profileHeaderBtn" 
+            onClick={returnToDashboard}
           >
             back
           </button>
@@ -20,50 +44,51 @@ export const Profile = () => {
         <div className="profileStatusOptions">
           <button
             type="button"
-            className="btn btn-success inputBtn profileHeaderBtn"
+            className="btn btn-success profileHeaderBtn" 
+            onClick= {handleAccept}
           >
             accept
           </button>
           <button
             type="button"
-            className="btn btn-danger inputBtn profileHeaderBtn"
+            className="btn btn-danger profileHeaderBtn"
           >
             reject
           </button>
         </div>
       </div>
-      <div className="candidateInfo">
-        <div className="candidateName">
-          <span>ohalewe</span> <span> chiemezie richmond</span>
-          <div className="internshipMode">
-            internship mode: <span className="physical">physical</span>{" "}
+        <div className="candidateInfo">
+          <div className="candidateName">
+            <span>{state.fullName}</span>
+            <div className="internshipMode">
+              internship mode: <span className="physical">physical</span>{" "}
+            </div>
+          </div>
+          <div className="candidatePersonalData">
+            <div className="candidateData">
+              phone number: {state.phoneNumber}
+            </div>
+            <div className="candidateData">{state.sex}</div>
+            <div className="candidateData">{state.address}</div>
+            <div className="candidateData">{state.dateOfBirth}</div>
           </div>
         </div>
-        <div className="candidatePersonalData">
-          <div className="candidateData">phone number: 1234567890</div>
-          <div className="candidateData">male</div>
-          <div className="candidateData">
-            Trans-ekulu, enugu, enugu state, nigeria
-          </div>
-          <div className="candidateData">20 october, 1985</div>
-        </div>
-      </div>
       <div className="candidateOptions">
         <button
           type="button"
-          className="btn btn-warning inputBtn profileOptionBtn"
+          className="btn btn-warning profileOptionBtn"
         >
           Application status
         </button>
         <button
           type="button"
-          className="btn btn-secondary inputBtn profileOptionBtn"
+          className="btn btn-secondary profileOptionBtn"
         >
           Phone interview
         </button>
         <button
           type="button"
-          className="btn btn-secondary inputBtn profileOptionBtn"
+          className="btn btn-secondary profileOptionBtn"
         >
           physical interview
         </button>

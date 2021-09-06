@@ -1,72 +1,13 @@
 import React from "react";
-// import { NavLink } from "react-router-dom";
-import RequestProcessor from "../../api/requestProcessor";
-import { useQuery } from "react-query";
+import { useHistory } from "react-router-dom";
 
-const fetchApplicants = () => {
-  const res = RequestProcessor({
-    method: "GET",
-    url: "/admin/search/Test",
-  })
-  return res
-};
+export const Table = ({data}) => {  
+  const history = useHistory()
 
-export const Table = () => {
-  
-  const { data } = useQuery("dashboard", fetchApplicants);
-  console.log(data?.result?.data)
-  let tableEntry = data?.result?.data;
+  const viewProfile = (profile) => {
+    history.push( `/dashboard/profile/${profile._id}`, profile)
+  }
 
-    // const tableData = [
-    //   {
-    //     id: 1,
-    //     name: "Ohalewe chiemezie richmond",
-    //     email: "ohalewechiemezie@richmond.com",
-    //     phone: "1234567890",
-    //     staus: "view profile",
-    //     link: "/dashboard/profile"
-    //   },
-    //   {
-    //     id: 2,
-    //     name: "Stephanie Nnoli",
-    //     email: "stephanie@richmond.com",
-    //     phone: "1234567890",
-    //     staus: "view profile",
-    //     link: "/dashboard/profile"
-    //   },
-    //   {
-    //     id: 3,
-    //     name: "Groovy Khela",
-    //     email: "groovy@richmond.com",
-    //     phone: "1234567890",
-    //     staus: "view profile",
-    //     link: "/dashboard/profile"
-    //   },
-    //   {
-    //     id: 4,
-    //     name: "Nancy Ryke",
-    //     email: "nancyryke@richmond.com",
-    //     phone: "1234567890",
-    //     staus: "view profile",
-    //     link: "/dashboard/profile"
-    //   },
-    //   {
-    //     id: 5,
-    //     name: "The Very Best",
-    //     email: "verybest@richmond.com",
-    //     phone: "1234567890",
-    //     staus: "view profile",
-    //     link: "/dashboard/profile"
-    //   },
-    //   {
-    //     id: 6,
-    //     name: "Victor Somebody",
-    //     email: "victorsomebody@richmond.com",
-    //     phone: "1234567890",
-    //     staus: "view profile",
-    //     link: "/dashboard/profile"
-    //   },
-    // ];
   return (
     <div>
       <div className="dashboardTable">
@@ -77,16 +18,22 @@ export const Table = () => {
           <div className="headTitle">status</div>
         </div>
         <div className="tableBody">
-          {tableEntry?.map((data, id) => {
-            return (
-              <div className="bodyRow" key={id}>
-                <div className="bodyTag nameTag">{data.fullName}</div>
-                <div className="bodyTag">{data.email}</div>
-                <div className="bodyTag">{data.phoneNumber}</div>
-                {/* <div className="bodyTag statusTag"> <NavLink to={data.link}> {data.staus} </NavLink> </div> */}
-              </div>
-            );
-          })}
+          { !data ? (
+            "No data found"
+          ) : (
+            <React.Fragment>
+              {data?.map((items, id) => {
+                return (
+                  <div className="bodyRow" key={id}>
+                    <div className="bodyTag nameTag">{items.fullName}</div>
+                    <div className="bodyTag">{items.email}</div>
+                    <div className="bodyTag">{items.phoneNumber}</div>
+                    { items._id ? <div className="bodyTag statusTag" onClick={()=> viewProfile(items)}> View Profile </div> : "" }
+                  </div>
+                );
+              })}
+            </React.Fragment>
+          )}
         </div>
         <div className="dashboardTableFooter">
           <div className="col">

@@ -1,12 +1,11 @@
 import React from "react";
-import "../selectedApplicants/selectedApplicants.css";
 import Input from "../../components/input/input";
 import { Table } from "../../components/table/table";
-// import { SelectedApplicantsTable } from "../../components/selectedApplicantsTable/selectedApplicantsTable";
+import "./pendingApplicants.css";
 
-export const SelectedApplicants = () => {
+export const PendingApplicants = () => {
   return (
-    <div className="selectedContainer">
+    <div className="pendingApplicantsContainer">
       <Input />
       <div className="cardContainer">
         <div className="d-flex flex-column align-items-center reelsCard">
@@ -14,9 +13,7 @@ export const SelectedApplicants = () => {
           <div className="reelsCount">20</div>
         </div>
       </div>
-      <div className="informationDiv">
-        <Table />
-      </div>
+      <Table />
     </div>
   );
 };

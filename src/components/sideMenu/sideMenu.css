@@ -38,8 +38,8 @@ dl, ol, ul {
     font-weight: 700 !important;
 }
 
-.sidemenuList li:hover, .activeClass {
-    background-color: #FFFFFF;
+.sidemenuList li:hover {
+    background-color: #E5E5E5;
     color: #071852;
     border-left: 6px solid #4066EB;
     cursor: pointer;

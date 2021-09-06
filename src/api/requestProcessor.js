@@ -2,7 +2,7 @@ import axios from "axios";
 import { BASE_URL } from "../api/config";
 
 axios.defaults.baseURL = BASE_URL;
-axios.defaults.headers['Content-Type'] = 'application/json';
+// axios.defaults.headers['Content-Type'] = 'application/json';
 
 const RequestProcessor = async ({method, url, payload:data}) => {
   try {

@@ -1,0 +1,10 @@
+/* https://damp-plateau-96490.herokuapp.com/admin/get/noLearningPath */
+
+.pendingApplicantsContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 50px;
+    overflow-y: scroll;
+    background-color: #E5E5E5;
+}
